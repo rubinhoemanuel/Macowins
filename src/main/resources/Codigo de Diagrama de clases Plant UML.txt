@@ -1,0 +1,71 @@
+class Prenda {
+  precioPropio
+  estado
+  tipo
+  
+  double getPrecio()
+}
+
+interface EstadoPrenda {
+  double getPrecio(double precioPropio)
+}
+
+enum TipoPrenda {
+	SACO, PANTALON, CAMISA
+}
+
+class PromocionPrenda implements EstadoPrenda {
+  valorFijo
+  double getPrecio(double precioPropio)
+}
+
+class LiquidacionPrenda implements EstadoPrenda {
+  double getPrecio(double precioPropio)
+}
+
+class NuevaPrenda implements EstadoPrenda {
+  double getPrecio(double precioPropio)
+}
+
+Prenda -> TipoPrenda
+Prenda --> EstadoPrenda
+
+abstract class Venta {
+  items
+  fecha
+
+  double importe()
+  double getPrecioItems()
+  abstract double getRecargo()
+}
+
+Venta "1" --> "*" Item
+
+class Item {
+  prenda
+  cantidad
+
+  double importe()
+}
+
+Item -> Prenda
+
+class VentaConTarjeta extends Venta {
+  cantidadCuotas;
+  coeficiente;
+
+  double getRecargo()
+}
+
+class VentaEnEfectivo extends Venta {
+  double getRecargo()
+}
+
+class Facturacion {
+  ventas
+	
+  double calcularGananciasVentasPorFecha(LocalDate fecha)
+	
+}
+
+Facturacion "1" --> "*" Venta
