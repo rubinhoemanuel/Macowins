@@ -28,37 +28,31 @@ public class PrendaTest {
 
 	@Test
 	public void getPrecioNuevaPrenda() {
-		//Assert.assertTrue(saco.getPrecio() == 8000.0);
 		assertEquals(8000.0d, saco.getPrecio());
 	}
 
 	@Test
 	public void getPrecioPromocionPrenda() {
-		//Assert.assertTrue(pantalon.getPrecio() == 3500.0);
 		assertEquals(3500.0d, pantalon.getPrecio());
 	}
 
 	@Test
 	public void getPrecioLiquidacionPrenda() {
-		//Assert.assertTrue(camisa.getPrecio() == 1250.0);
 		assertEquals(1250.0d, camisa.getPrecio());
 	}
 	
 	@Test
 	public void verificacionPrendatipoSaco() {
-		//Assert.assertTrue(saco.getTipo() == TipoPrenda.SACO);
 		assertEquals(TipoPrenda.SACO,saco.getTipo());
 	}
 	
 	@Test
 	public void verificacionPrendatipoPantalon() {
-		//Assert.assertTrue(pantalon.getTipo() == TipoPrenda.PANTALON);
 		assertEquals(TipoPrenda.PANTALON,pantalon.getTipo());
 	}
 	
 	@Test
 	public void verificacionPrendatipoCamisa() {
-		//Assert.assertTrue(camisa.getTipo() == TipoPrenda.CAMISA);
 		assertEquals(TipoPrenda.CAMISA, camisa.getTipo());
 	}
 
